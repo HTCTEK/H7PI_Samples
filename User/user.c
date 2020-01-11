@@ -127,6 +127,12 @@ void sys_Init(void)
 		app_test_games_start();
 	}
 	#endif
+	#ifdef app_arduino
+	{
+		extern void app_arduino_start(void);
+		app_arduino_start();
+	}
+	#endif
 }
 
 

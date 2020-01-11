@@ -92,10 +92,18 @@ void Error_Handler(void);
 #define TFT_CS_GPIO_Port GPIOC
 #define TFT_RST_Pin GPIO_PIN_8
 #define TFT_RST_GPIO_Port GPIOC
+#define TX0_Pin GPIO_PIN_9
+#define TX0_GPIO_Port GPIOA
+#define RX0_Pin GPIO_PIN_10
+#define RX0_GPIO_Port GPIOA
 #define IO7_Pin GPIO_PIN_11
 #define IO7_GPIO_Port GPIOC
 #define IO8_Pin GPIO_PIN_12
 #define IO8_GPIO_Port GPIOC
+#define RX1_Pin GPIO_PIN_0
+#define RX1_GPIO_Port GPIOE
+#define TX1_Pin GPIO_PIN_1
+#define TX1_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
