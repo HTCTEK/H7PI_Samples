@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -42,7 +42,7 @@
 /* USER CODE END PFP */
 
 /* USB Device Core handle declaration. */
-USBD_HandleTypeDef hUsbDeviceFS;
+__weak USBD_HandleTypeDef hUsbDeviceFS;
 
 /*
  * -- Insert your variables declaration here --
@@ -62,9 +62,13 @@ USBD_HandleTypeDef hUsbDeviceFS;
   * Init USB device Library, add supported class and start the library
   * @retval None
   */
-void MX_USB_DEVICE_Init(void)
+__weak void MX_USB_DEVICE_Init(void)
 {
   /* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */
+  
+  /* USER CODE END USB_DEVICE_Init_PreTreatment */
+  
+  /* Init Device Library, add supported class and start the library. */
   if (USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS) != USBD_OK)
   {
     Error_Handler();
@@ -77,30 +81,7 @@ void MX_USB_DEVICE_Init(void)
   {
     Error_Handler();
   }
-  HAL_PWREx_EnableUSBVoltageDetector();
-	return;
-  /* USER CODE END USB_DEVICE_Init_PreTreatment */
-  
-  /* Init Device Library, add supported class and start the library. */
-  if (USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS) != USBD_OK)
-  {
-    Error_Handler();
-  }
-  if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_MSC) != USBD_OK)
-  {
-    Error_Handler();
-  }
-  if (USBD_MSC_RegisterStorage(&hUsbDeviceFS, &USBD_Storage_Interface_fops_FS) != USBD_OK)
-  {
-    Error_Handler();
-  }
-  if (USBD_Start(&hUsbDeviceFS) != USBD_OK)
-  {
-    Error_Handler();
-  }
-
   /* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */
-  HAL_PWREx_EnableUSBVoltageDetector();
   
   /* USER CODE END USB_DEVICE_Init_PostTreatment */
 }

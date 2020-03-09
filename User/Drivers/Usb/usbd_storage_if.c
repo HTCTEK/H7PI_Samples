@@ -185,9 +185,10 @@ int8_t STORAGE_Init_FS(uint8_t lun)
 	switch(lun)
 	{
 		case 0://SPI FLASH
-			//W25Q64_SPI_Init();
+			//W25Q64_SPI_Init();//如果在USB初始化之前调用了文件系统初始化，这里不要进行初始化
 			break;
 		case 1://SD
+			//如果在USB初始化之前调用了文件系统初始化，这里不要进行初始化
 			break; 
 	}
   return (USBD_OK);
@@ -271,7 +272,7 @@ int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t bl
 		case 0:
 			W25Q64_SPI_Read(buf,blk_addr*512,blk_len*512);
 			break;
-		case 1://SD?�
+		case 1://SD?¨
 			break; 
 	} 
   return (USBD_OK);
@@ -291,7 +292,7 @@ int8_t STORAGE_Write_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t b
 		case 0://spi FLASH
 			W25Q64_SPI_Write(buf,blk_addr*512,blk_len*512);
 			break;
-		case 1://SD?�
+		case 1://SD?¨
 			break; 
 	}
   return (USBD_OK);
