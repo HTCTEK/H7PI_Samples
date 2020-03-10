@@ -111,7 +111,6 @@ void     CDC_ReadByte(uint8_t* des);
 void     CDC_ReadBytes(uint8_t* des, uint32_t length);
 uint8_t  CDC_WriteBytes(uint8_t* Buf, uint16_t Len);
 uint32_t CDC_GetDataLength(void);
-void     CDC_Printf(const char *format, ...);
 /* USER CODE END EXPORTED_FUNCTIONS */
 
 /**

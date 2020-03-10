@@ -23,8 +23,10 @@
 #define Stream_h
 
 #include <inttypes.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "Print.h"
-
 // compatability macros for testing
 /*
 #define   getInt()            parseInt()
@@ -35,7 +37,7 @@
 readBytesBetween( pre_string, terminator, buffer, length)
 */
 
-class Stream : public Print
+class Stream:public Print
 {
   protected:
     unsigned long _timeout;      // number of milliseconds to wait for the next char before aborting timed read
@@ -45,10 +47,10 @@ class Stream : public Print
     int peekNextDigit(); // returns the next numeric digit in the stream or -1 if timeout
 
   public:
-    virtual int available() = 0;
-    virtual int read() = 0;
-    virtual int peek() = 0;
-    virtual void flush() = 0;
+    virtual uint32_t  available();
+    virtual uint32_t  read();
+    virtual uint32_t  peek();
+    virtual void flush();
 
     Stream() {_timeout=1000;}
 
@@ -89,4 +91,7 @@ class Stream : public Print
   float parseFloat(char skipChar);  // as above but the given skipChar is ignored
 };
 
+#ifdef __cplusplus
+}
+#endif
 #endif

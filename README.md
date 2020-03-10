@@ -12,5 +12,5 @@ bootloader at 0x08000000-->app at 0x90000000(qspi flash)
 app at 0x90000000-->STM32 HAL Init-->freeRTOS Init-->User's Default Task-->User's Init(Functions,Drivers Init)-->User's Task
 
 #### other samples
-wikis，[H7PI WIKI](https://github.com/PinoDM/H7PI)
+wikis，[H7PI WIKI](https://pinno.cc/2020/02/28/H7PI-%E7%AE%80%E4%BB%8B/)
 

@@ -65,9 +65,9 @@
 
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
-#define USBD_MANUFACTURER_STRING     "PinoDM"
+#define USBD_MANUFACTURER_STRING     "Pinno"
 #define USBD_PID_FS     22314
-#define USBD_PRODUCT_STRING_FS     "PinoDM Mass Storage"
+#define USBD_PRODUCT_STRING_FS     "Pinno Mass Storage"
 #define USBD_CONFIGURATION_STRING_FS     "MSC Config"
 #define USBD_INTERFACE_STRING_FS     "MSC Interface"
 

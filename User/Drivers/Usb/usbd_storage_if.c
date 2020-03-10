@@ -110,7 +110,7 @@ const int8_t STORAGE_Inquirydata_FS[] = {/* 36 */
   0x00,
   0x00,	
   0x00,
-  'P', 'i', 'n', 'n', 'o', ' ', ' ', ' ', /* Manufacturer : 8 bytes */
+  'P', 'i', 'n', 'o', 'D', 'M', ' ', ' ', /* Manufacturer : 8 bytes */
   'P', 'r', 'o', 'd', 'u', 'c', 't', ' ', /* Product      : 16 Bytes */
   ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
   '0', '.', '0' ,'1'                      /* Version      : 4 Bytes */
@@ -185,10 +185,10 @@ int8_t STORAGE_Init_FS(uint8_t lun)
 	switch(lun)
 	{
 		case 0://SPI FLASH
-			//W25Q64_SPI_Init();//å¦‚æœåœ¨USBåˆå§‹åŒ–ä¹‹å‰è°ƒç”¨äº†æ–‡ä»¶ç³»ç»Ÿåˆå§‹åŒ–ï¼Œè¿™é‡Œä¸è¦è¿›è¡Œåˆå§‹åŒ–
+			//W25Q64_SPI_Init();//Èç¹ûÔÚUSB³õÊ¼»¯Ö®Ç°µ÷ÓÃÁËÎÄ¼şÏµÍ³³õÊ¼»¯£¬ÕâÀï²»Òª½øĞĞ³õÊ¼»¯
 			break;
 		case 1://SD
-			//å¦‚æœåœ¨USBåˆå§‹åŒ–ä¹‹å‰è°ƒç”¨äº†æ–‡ä»¶ç³»ç»Ÿåˆå§‹åŒ–ï¼Œè¿™é‡Œä¸è¦è¿›è¡Œåˆå§‹åŒ–
+			//Èç¹ûÔÚUSB³õÊ¼»¯Ö®Ç°µ÷ÓÃÁËÎÄ¼şÏµÍ³³õÊ¼»¯£¬ÕâÀï²»Òª½øĞĞ³õÊ¼»¯
 			break; 
 	}
   return (USBD_OK);
@@ -272,7 +272,7 @@ int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t bl
 		case 0:
 			W25Q64_SPI_Read(buf,blk_addr*512,blk_len*512);
 			break;
-		case 1://SD?Â¨
+		case 1://SD?¡§
 			break; 
 	} 
   return (USBD_OK);
@@ -292,7 +292,7 @@ int8_t STORAGE_Write_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t b
 		case 0://spi FLASH
 			W25Q64_SPI_Write(buf,blk_addr*512,blk_len*512);
 			break;
-		case 1://SD?Â¨
+		case 1://SD?¡§
 			break; 
 	}
   return (USBD_OK);

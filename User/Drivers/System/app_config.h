@@ -11,7 +11,7 @@
 *****************************************/
 #include "irq.h"
 #include "led.h"
-#include "lcd.h"
+#include "lcd_fmc.h"
 #include "GUI.h"
 #include "fatfs.h"
 #include "usb_device.h"

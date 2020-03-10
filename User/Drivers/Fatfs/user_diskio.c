@@ -82,7 +82,7 @@ DSTATUS USER_initialize (
 )
 {
   /* USER CODE BEGIN INIT */
-	//如果初始化或者USB初始化U盘的时候已经对flash芯片初始化，这里就不需要
+	//�����ʼ������USB��ʼ��U�̵�ʱ���Ѿ���flashоƬ��ʼ��������Ͳ���Ҫ
 
     Stat = RES_OK;
     return RES_OK;

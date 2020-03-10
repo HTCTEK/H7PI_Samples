@@ -24,10 +24,16 @@
 #include <stdio.h> // for size_t
 #include <string.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+	
 #define DEC 10
 #define HEX 16
 #define OCT 8
 #define BIN 2
+
+	
 
 class Print
 {
@@ -43,12 +49,9 @@ class Print
     int getWriteError() { return write_error; }
     void clearWriteError() { setWriteError(0); }
   
-    virtual size_t write_ch(uint8_t) = 0;
-    size_t write(const char *str) {
-      if (str == NULL) return 0;
-      return write((const uint8_t *)str, strlen(str));
-    }
-    virtual size_t write(const uint8_t *buffer, size_t size);
+    virtual size_t write_ch(char ch);
+    virtual size_t write(const char* str);
+    virtual size_t write(const char* buf, size_t len);
     
     size_t print(const char[]);
     size_t print(char);
@@ -69,5 +72,9 @@ class Print
     size_t println(double, int = 2);
     size_t println(void);
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -42,7 +42,7 @@
 /* USER CODE END PFP */
 
 /* USB Device Core handle declaration. */
-__weak USBD_HandleTypeDef hUsbDeviceFS;
+USBD_HandleTypeDef hUsbDeviceFS;
 
 /*
  * -- Insert your variables declaration here --
@@ -62,7 +62,7 @@ __weak USBD_HandleTypeDef hUsbDeviceFS;
   * Init USB device Library, add supported class and start the library
   * @retval None
   */
-__weak void MX_USB_DEVICE_Init(void)
+void MX_USB_DEVICE_Init(void)
 {
   /* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */
   

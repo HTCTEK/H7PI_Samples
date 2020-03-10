@@ -23,7 +23,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-#include "stdarg.h"
+
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -346,21 +346,6 @@ uint32_t CDC_GetDataLength(void)
 uint8_t* CDC_GetDataAddress(void)
 {
 	return rxBuffer;
-}
-
-/***************************************************************************
-系统日志打印
-****************************************************************************/
-void CDC_Printf(const char *format, ...)
-{
-    va_list args;
-    uint32_t length;
-	  uint8_t buffer[CDC_RX_BUFFER_SIZE];
- 
-    va_start(args, format);
-    length = vsnprintf((char *)buffer, CDC_RX_BUFFER_SIZE, (char *)format, args);
-    va_end(args);
-    CDC_Transmit_FS(buffer, length);
 }
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 

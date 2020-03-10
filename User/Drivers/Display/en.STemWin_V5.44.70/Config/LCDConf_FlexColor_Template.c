@@ -48,7 +48,7 @@ Purpose     : Display controller configuration (single layer)
 #include "drivers_config.h"
 #include "GUI.h"
 #include "GUIDRV_FlexColor.h"
-#include "lcd.h"
+#include "lcd_fmc.h"
 #include "oled.h"
 #include "lcd_st7789.h"
 
