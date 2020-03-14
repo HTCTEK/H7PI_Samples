@@ -162,8 +162,8 @@ void aht10_ReadData(void)
 	RetuData = RetuData&0xfffff;
 	ct[1] =RetuData;
 
-	humidity = (float)ct[0]*100/1024/1024;
-	temperature = (float)ct[1] *200/1024/1024-50;
+	humidity = (float)ct[0]*100/(1024*1024);
+	temperature = (float)ct[1]*200/(1024*1024)-50;
 }
 /*
 *

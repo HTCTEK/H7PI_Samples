@@ -313,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>6</Optim>
+            <Optim>5</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -1137,11 +1137,6 @@
               <FileType>1</FileType>
               <FilePath>..\User\Drivers\Display\font_ext.c</FilePath>
             </File>
-            <File>
-              <FileName>font_ext.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\Drivers\Display\font_ext.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -1777,7 +1772,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>5</Optim>
+            <Optim>6</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -2518,7 +2513,7 @@
               <RVCTZI>0</RVCTZI>
               <RVCTOtherData>0</RVCTOtherData>
               <ModuleSelection>0</ModuleSelection>
-              <IncludeInBuild>1</IncludeInBuild>
+              <IncludeInBuild>0</IncludeInBuild>
               <AlwaysBuild>2</AlwaysBuild>
               <GenerateAssemblyFile>2</GenerateAssemblyFile>
               <AssembleAssemblyFile>2</AssembleAssemblyFile>
@@ -2600,11 +2595,6 @@
               <FileName>font_ext.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Drivers\Display\font_ext.c</FilePath>
-            </File>
-            <File>
-              <FileName>font_ext.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\Drivers\Display\font_ext.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3982,7 +3972,7 @@
               <RVCTZI>0</RVCTZI>
               <RVCTOtherData>0</RVCTOtherData>
               <ModuleSelection>0</ModuleSelection>
-              <IncludeInBuild>1</IncludeInBuild>
+              <IncludeInBuild>0</IncludeInBuild>
               <AlwaysBuild>2</AlwaysBuild>
               <GenerateAssemblyFile>2</GenerateAssemblyFile>
               <AssembleAssemblyFile>2</AssembleAssemblyFile>
@@ -4064,11 +4054,6 @@
               <FileName>font_ext.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Drivers\Display\font_ext.c</FilePath>
-            </File>
-            <File>
-              <FileName>font_ext.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\User\Drivers\Display\font_ext.h</FilePath>
             </File>
           </Files>
         </Group>

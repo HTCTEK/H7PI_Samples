@@ -75,19 +75,29 @@ void app_sensors_task(void const * argument)
 			GUI_DispStringAt(tmp,0,24);
 **********************************************************************/
 void mainRefresh(void);
+int8_t aht10_Init(void);
 void app_refresh_task(void const * argument)
 {
-	char tmp[32]={0};
+	char tmp[64]={0};
+	aht10_Init();
 	while(1)
 	{
 		switch(PageNum)
 		{
 			case 0:
-				mainRefresh();
-				cdc_printf("refresh!!\r\n");
+				//mainRefresh();
+				aht10_ReadData();
+				memset(tmp,0,sizeof tmp);
+				sprintf(tmp,"\r\ntemperature: %5.1f C\r\nhumidity: %5.1f RH%%\r\n\r\n",aht10_GetTemperature(),aht10_GetHumidity());
+				cdc_printf(tmp);
+				uart_send((uint8_t*)tmp,strlen(tmp));	
+				led(1,0);led(2,1);
+				osDelay(500);
+				led(1,1);led(2,0);
+				osDelay(500);
+			
 			break;
 		}
-		osDelay(1000);
 	}
 }
 /*********************************************************************
@@ -131,10 +141,10 @@ void app_test_games_start(void)
   osThreadDef(sensors_task, app_sensors_task, osPriorityNormal, 2, 1024);
 	app_handler_sensors = osThreadCreate(osThread(sensors_task), NULL);
 	
-  osThreadDef(test_task, app_test_games_task, osPriorityBelowNormal, 3, 1024);
+  osThreadDef(test_task, app_test_games_task, osPriorityNormal, 3, 1024);
 	app_handler_test_games = osThreadCreate(osThread(test_task), NULL);
 	osDelay(100);
-  osThreadDef(refresh_task, app_refresh_task, osPriorityBelowNormal, 4, 1024*3);
+  osThreadDef(refresh_task, app_refresh_task, osPriorityNormal, 4, 1024*3);
 	app_handler_refresh = osThreadCreate(osThread(refresh_task), NULL);
 }
 
